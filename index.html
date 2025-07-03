@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>АЙКААН ЕООД - Автотенекеджийски и Автобояджийски Услуги в Ардино</title>
+    <meta name="description" content="Професионални автотенекеджийски и автобояджийски услуги в Ардино. АЙКААН ЕООД предлага качествен ремонт на каросерии, боядисване и възстановяване на автомобили. 5 звезди в Google Maps." />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+
+        :root {
+            --background: hsl(0, 0%, 100%);
+            --foreground: hsl(20, 14.3%, 4.1%);
+            --muted: hsl(60, 4.8%, 95.9%);
+            --muted-foreground: hsl(25, 5.3%, 44.7%);
+            --card: hsl(0, 0%, 100%);
+            --card-foreground: hsl(20, 14.3%, 4.1%);
+            --border: hsl(20, 5.9%, 90%);
+            --primary: hsl(207, 90%, 54%);
+            --primary-foreground: hsl(211, 100%, 99%);
+            --secondary: hsl(60, 4.8%, 95.9%);
+            --secondary-foreground: hsl(24, 9.8%, 10%);
+            --destructive: hsl(0, 84.2%, 60.2%);
+            --ring: hsl(20, 14.3%, 4.1%);
+            --radius: 0.5rem;
+            
+            --automotive-navy: hsl(220, 39%, 11%);
+            --automotive-blue: hsl(220, 26%, 18%);
+            --automotive-red: hsl(0, 84%, 60%);
+            --automotive-orange: hsl(25, 95%, 53%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--foreground);
+            background-color: var(--background);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: hsl(60, 4.8%, 95.9%);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--automotive-red);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: hsl(0, 84%, 50%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--automotive-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: hsl(0, 84%, 50%);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            color: white;
+            border: 3px solid white;
+            font-weight: bold;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--automotive-navy);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            background-color: var(--card);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .card-navy {
+            background-color: var(--automotive-navy);
+            color: white;
+        }
+
+        .card-navy:hover {
+            background-color: var(--automotive-blue);
+            transform: translateY(-8px);
+        }
+
+        .card-navy h4 {
+            color: white !important;
+        }
+
+        .card-navy p {
+            color: #cbd5e1 !important;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-gray {
+            background-color: hsl(60, 4.8%, 95.9%);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--automotive-navy);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-logo .highlight {
+            color: var(--automotive-red);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--automotive-navy) 0%, var(--automotive-blue) 100%);
+            background-image: url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            color: var(--automotive-red);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .rating-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .rating-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border-radius: var(--radius);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .stars {
+            display: flex;
+            color: #fbbf24;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--automotive-navy);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--muted-foreground);
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background-color: hsl(60, 4.8%, 95.9%);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--automotive-red);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .card-navy .service-icon {
+            color: var(--automotive-red);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--automotive-navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--muted-foreground);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            color: var(--muted-foreground);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-list li::before {
+            content: "✓";
+            color: #22c55e;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: var(--radius);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            height: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--automotive-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--muted-foreground);
+        }
+
+        .contact-card {
+            padding: 1.5rem;
+            text-align: center;
+            background-color: hsl(60, 4.8%, 95.9%);
+        }
+
+        .contact-icon {
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--automotive-red);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--automotive-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--automotive-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .contact-card a:hover {
+            color: hsl(0, 84%, 50%);
+        }
+
+        .contact-card p {
+            color: var(--muted-foreground);
+            font-size: 0.875rem;
+        }
+
+        .maps-container {
+            margin-top: 4rem;
+        }
+
+        .maps-card {
+            padding: 1rem;
+            background-color: var(--card);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .maps-header {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--automotive-navy);
+            margin-bottom: 1rem;
+        }
+
+        .maps-iframe {
+            width: 100%;
+            height: 24rem;
+            border-radius: var(--radius);
+            border: 0;
+        }
+
+        .maps-button {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .footer {
+            background-color: var(--automotive-navy);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .footer .highlight {
+            color: var(--automotive-red);
+        }
+
+        .footer p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #475569;
+            color: #94a3b8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #cbd5e1;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-right {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-left {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s ease;
+        }
+
+        .zoom-in.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+    
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.contact-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-card {
+    padding: 2rem;
+    background-color: hsl(60, 4.8%, 95.9%);
+    margin-bottom: 0 !important;
+}
+
+.service-card ul {
+    margin-bottom: 0 !important;
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: hsl(60, 4.8%, 95.9%);
+}
+
+.service-card ul {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding-left: 1.25rem;
+}
+</style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                АЙКААН <span class="highlight">ЕООД</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Начало</a>
+                <a href="#services" class="nav-link">Услуги</a>
+                <a href="#about" class="nav-link">За нас</a>
+                <a href="#contact" class="nav-link">Контакти</a>
+                <a href="tel:0898337698" class="btn btn-primary">
+                    <i data-lucide="phone" style="width: 1rem; height: 1rem;"></i>
+                    Обади се
+                </a>
+            </div>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" style="width: 1.5rem; height: 1.5rem;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-up">
+                <h1>
+                    Професионални<br />
+                    <span class="highlight">Автосервизни Услуги</span>
+                </h1>
+                <p>
+                    Експертни автотенекеджийски и автобояджийски услуги в Ардино. 
+                    Върнете блясъка на вашия автомобил с нашите професионални услуги.
+                </p>
+                
+                <div class="rating-display fade-up">
+                    <div class="rating-card">
+                        <div class="stars">
+                            <i data-lucide="star" style="width: 1.25rem; height: 1.25rem; fill: currentColor;"></i>
+                            <i data-lucide="star" style="width: 1.25rem; height: 1.25rem; fill: currentColor;"></i>
+                            <i data-lucide="star" style="width: 1.25rem; height: 1.25rem; fill: currentColor;"></i>
+                            <i data-lucide="star" style="width: 1.25rem; height: 1.25rem; fill: currentColor;"></i>
+                            <i data-lucide="star" style="width: 1.25rem; height: 1.25rem; fill: currentColor;"></i>
+                        </div>
+                        <span style="font-weight: 600;">5.0 звезди в Google Maps</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons fade-up">
+                    <a href="#services" class="btn btn-primary">
+                        Вижте Услугите
+                    </a>
+                    <a href="tel:0898337698" class="btn btn-outline">
+                        <i data-lucide="phone" style="width: 1.25rem; height: 1.25rem;"></i>
+                        0898 337 698
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Нашите Услуги</h2>
+                <p>
+                    Предлагаме широк спектър от професионални автосервизни услуги 
+                    с гаранция за качество и дългосрочни резултати.
+                </p>
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 4rem;">
+
+                <div class="card fade-up">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i data-lucide="hammer" style="width: 3rem; height: 3rem;"></i>
+                        </div>
+                        <h3>Автотенекеджийски Услуги</h3>
+                        <p>
+                            Професионален ремонт на автомобилни каросерии, изправяне на вдлъбнатини, 
+                            заваряване и възстановяване на повредени части.
+                        </p>
+                        <ul class="service-list">
+                            <li>Ремонт на каросерия</li>
+                            <li>Изправяне на вдлъбнатини</li>
+                            <li>Заваряване</li>
+                            <li>Смяна на части</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card fade-up">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i data-lucide="paintbrush-2" style="width: 3rem; height: 3rem;"></i>
+                        </div>
+                        <h3>Автобояджийски Услуги</h3>
+                        <p>
+                            Професионално боядисване на автомобили с най-качествени материали 
+                            и съвременни технологии за перфектен резултат.
+                        </p>
+                        <ul class="service-list">
+                            <li>Пълно боядисване</li>
+                            <li>Частично боядисване</li>
+                            <li>Полиране</li>
+                            <li>Защитни покрития</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-3 fade-up">
+                <div class="card card-navy">
+                    <div class="service-card" style="background: transparent; text-align: center;">
+                        <div class="service-icon" style="margin: 0 auto 1rem;">
+                            <i data-lucide="wrench" style="width: 2rem; height: 2rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Експресни Услуги</h4>
+                        <p style="color: #cbd5e1; margin: 0;">Бързи ремонти за малки повреди</p>
+                    </div>
+                </div>
+                <div class="card card-navy">
+                    <div class="service-card" style="background: transparent; text-align: center;">
+                        <div class="service-icon" style="margin: 0 auto 1rem;">
+                            <i data-lucide="shield" style="width: 2rem; height: 2rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Гаранция</h4>
+                        <p style="color: #cbd5e1; margin: 0;">Всички услуги с писмена гаранция</p>
+                    </div>
+                </div>
+                <div class="card card-navy">
+                    <div class="service-card" style="background: transparent; text-align: center;">
+                        <div class="service-icon" style="margin: 0 auto 1rem;">
+                            <i data-lucide="clock" style="width: 2rem; height: 2rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Навременност</h4>
+                        <p style="color: #cbd5e1; margin: 0;">Спазваме договорените срокове</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section section-gray">
+        <div class="container">
+            <div class="about-grid">
+                <div class="fade-right">
+                    <img 
+                        src="https://i.postimg.cc/sXSXmYwb/hero-2000x1328-1.jpg" 
+                        alt="Автобояджия" 
+                        class="about-image"
+                    />
+                </div>
+                <div class="fade-left">
+                    <h2 style="font-size: 2.5rem; font-weight: bold; color: var(--automotive-navy); margin-bottom: 1.5rem;">За АЙКААН ЕООД</h2>
+                    <p style="font-size: 1.125rem; color: var(--muted-foreground); margin-bottom: 1.5rem;">
+                        АЙКААН ЕООД е водеща компания в областта на автотенекеджийските и 
+                        автобояджийските услуги в Ардино. С години опит и професионален екип, 
+                        ние осигуряваме най-високо качество на обслужване.
+                    </p>
+                    <p style="font-size: 1.125rem; color: var(--muted-foreground); margin-bottom: 2rem;">
+                        Нашият модерен сервиз разполага с най-новите технологии и оборудване, 
+                        което ни позволява да предлагаме услуги от световно ниво на конкурентни цени.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Години опит</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Доволни клиенти</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Гаранция</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">5⭐</div>
+                            <div class="stat-label">Google оценка</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section section-gray">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Свържете се с нас</h2>
+                <p>
+                    Готови сме да отговорим на всички ваши въпроси и да ви предоставим професионална консултация.
+                </p>
+            </div>
+
+            <div class="grid-4 fade-up">
+
+                <div class="card">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3>Адрес</h3>
+                        <p>ул. Иван Вазов 53</p>
+                        <p>6750 Ардино</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <h3>Телефон</h3>
+                        <a href="tel:0898337698">0898 337 698</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <a href="mailto:aykaan@abv.bg">aykaan@abv.bg</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h3>Google Оценка</h3>
+                        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 0.25rem;">
+                            <div class="stars" style="font-size: 0.75rem; margin-right: 0.25rem;">
+                                <i data-lucide="star" style="width: 0.75rem; height: 0.75rem; fill: currentColor;"></i>
+                                <i data-lucide="star" style="width: 0.75rem; height: 0.75rem; fill: currentColor;"></i>
+                                <i data-lucide="star" style="width: 0.75rem; height: 0.75rem; fill: currentColor;"></i>
+                                <i data-lucide="star" style="width: 0.75rem; height: 0.75rem; fill: currentColor;"></i>
+                                <i data-lucide="star" style="width: 0.75rem; height: 0.75rem; fill: currentColor;"></i>
+                            </div>
+                        </div>
+                        <a href="https://maps.app.goo.gl/kPRAE3H5Cm2TFQn69" target="_blank" rel="noopener noreferrer">
+                            5.0 звезди
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="maps-container fade-up">
+                <div class="maps-card">
+                    <h3 class="maps-header">Намерете ни</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.4647584!2d25.126!3d41.563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDMzJzQ3LjAiTiAyNcKwMDcnMzQuMCJF!5e0!3m2!1sen!2sbg!4v1234567890"
+                        class="maps-iframe"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="АЙКААН ЕООД Location"
+                    ></iframe>
+                    <div class="maps-button">
+                        <a 
+                            href="https://maps.app.goo.gl/kPRAE3H5Cm2TFQn69" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="btn btn-primary"
+                        >
+                            Отвори в Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>
+                        АЙКААН <span class="highlight">ЕООД</span>
+                    </h3>
+                    <p>
+                        Професионални автотенекеджийски и автобояджийски услуги в Ардино. 
+                        Качество и надеждност от 2014 година.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Услуги</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Автотенекеджийски услуги</a></li>
+                        <li><a href="#services">Автобояджийски услуги</a></li>
+                        <li><a href="#services">Ремонт на каросерии</a></li>
+                        <li><a href="#services">Боядисване</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Контакти</h4>
+                    <div style="color: #cbd5e1;">
+                        <p style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--automotive-red); margin-right: 0.5rem; margin-top: 0.25rem;"></i>
+                            <span>ул. Иван Вазов 53, 6750 Ардино</span>
+                        </p>
+                        <p style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="color: var(--automotive-red); margin-right: 0.5rem;"></i>
+                            <a href="tel:0898337698" style="color: #cbd5e1; text-decoration: none;">0898 337 698</a>
+                        </p>
+                        <p style="display: flex; align-items: center;">
+                            <i class="fas fa-envelope" style="color: var(--automotive-red); margin-right: 0.5rem;"></i>
+                            <a href="mailto:aykaan@abv.bg" style="color: #cbd5e1; text-decoration: none;">aykaan@abv.bg</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 АЙКААН ЕООД. Всички права запазени.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 64;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.fade-up, .fade-right, .fade-left, .zoom-in');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '100%';
+                navMenu.style.left = '0';
+                navMenu.style.right = '0';
+                navMenu.style.backgroundColor = 'hsl(220, 39%, 11%)';
+                navMenu.style.padding = '1rem';
+                navMenu.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                navMenu.style.zIndex = '999';
+            }
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-menu').style.display = 'none';
+                }
+            });
+        });
+
+        window.addEventListener('load', function() {
+
+            setTimeout(() => {
+                document.querySelectorAll('.hero .fade-up').forEach(el => {
+                    el.classList.add('animate');
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
